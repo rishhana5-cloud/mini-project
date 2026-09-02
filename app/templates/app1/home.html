@@ -1,0 +1,64 @@
+{% extends  'app1/base.html'%}
+
+  {% block title %}  <title>Home Page</title> {% endblock%}
+
+<body style="background-color: #fdf2f2;">
+  
+{% block content %}
+
+<div class="container text-center background-color: #fdf2f2">
+  <div class="row g-5">
+    {% for product in product%}
+    <div class="col-3" >
+
+     <div class="card border-0 shadow-sm rounded-4 h-100" >
+      <a href="{% url 'all' product.id%}"><img src="{{product.image.url}}" class="card-img-top rounded-top-4" alt="image"
+      style="height: 250px; object-fit:cover;"></a>
+
+      <div class="card-body text-center d-flex flex-column">
+    <h5 class="card-title fw-bold" style="overflow: hidden; min-height: 40px;">{{product.name}}</h5>
+
+    <p class="card-text">{{product.price}}</p>
+    <div class="mt-auto"><a href="{% url 'add' product.id %}" class="btn btn-dark btn-sm px-4 ">ADD TO CART🛒</a></div>
+  </div>
+</div>
+  </div>
+     {% endfor %}
+  
+  </div>
+  </div>
+    {% endblock%}
+
+</body>
+
+{% block footer%}
+<footer class="mt-5 pt-5">
+<div class="card text-center">
+  <div class="card-header">
+    Featured Products
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Shop Our Latest Collections</h5>
+    <p class="card-text" style="font-family: Arial, Helvetica, sans-serif;">Explore our latest products and find something you'll love</p>
+    <a href="{% url 'home' %}" class="btn btn-dark btn-primary">Shop Now</a>
+  </div>
+  <div class="card-footer text-body-secondary">
+    New Arrivals
+  </div>
+</div>
+</footer>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

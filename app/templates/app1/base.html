@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Mini Project</title>{% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+  <div class="container-fluid px-lg-5">
+   
+    <a class="navbar-brand fw-bold text-danger-emphasis" href="{% url 'home' %}" style="font-weight:900; letter-spacing:3px; font-size:28px;">
+      SheShop
+    </a>
+
+    <div class="d-flex align-items-center gap-3">
+      <a href="{% url 'home' %}" class="nav-link">Home</a>
+      <a href="{% url 'user' %}" class="nav-link">Sign up</a>
+      <a href="{% url 'log' %}" class="nav-link">Login</a>
+      <a href="{% url 'out' %}" class="nav-link">Logout</a>
+      <a href="{% url 'order' %}" class="nav-link">Orders</a> 
+      <a href="/cart/" class="btn btn-dark btn-sm rounded-pill px-3" >Cart 🛒</a>
+    </div>
+  </div>
+</nav>
+
+{% block content %} {% endblock%}
+</body>
+{% block footer%} {% endblock%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% block js%} {% endblock%}
+
+
+
+</html>
